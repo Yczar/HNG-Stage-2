@@ -9,11 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'HNG TASK',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'HNG TASK'),
     );
   }
 }
@@ -45,38 +45,52 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              printedData.isEmpty
-                  ? 'Please Enter the text you would love to display and click the submit button below'
-                  : printedData,
-              textAlign: TextAlign.center,
-            ),
-            TextFormField(
-              controller: _textEditingController,
-            ),
-            InkWell(
-              onTap: () {
-                _setData();
-              },
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(color: Colors.blue),
-                child: Text(
-                  'Submit',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 30.0,
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                printedData.isEmpty
+                    ? 'Please Enter the text you would love to display and click the submit button below'
+                    : printedData,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: printedData.isEmpty ? null : 24,
                 ),
               ),
-            )
-          ],
+              SizedBox(
+                height: 90,
+              ),
+              TextFormField(
+                controller: _textEditingController,
+              ),
+              SizedBox(
+                height: 90,
+              ),
+              InkWell(
+                onTap: () {
+                  _setData();
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
+                  decoration: BoxDecoration(color: Colors.blue),
+                  child: Text(
+                    'Submit',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
